@@ -11,8 +11,5 @@ fi
   else
     echo "️ Нет изменений для коммита."
   fi
-
-else
-  echo " Это не git-репозиторий."
   exit 1
 fi
