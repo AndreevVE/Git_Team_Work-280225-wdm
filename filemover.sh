@@ -11,7 +11,7 @@
 
 # Проверка, есть ли файлы с указанным расширением в исходной директории
 #!/bin/bash
-SOURCE_DIR='sourse_directory'
+SOURCE_DIR='source_directory'
 EXTENSION='file_extension'
 
 found=0
