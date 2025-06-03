@@ -32,7 +32,7 @@ tar -cf "$target_directory/$archive_name" *."$file_extension"
 if [ $? -eq 0 ]; then
     echo "Архив $archive_name успешно создан в $target_directory."
 
-# Удаление исзодных файлоа
+# ====== Удаление исзодных файлов ======
     rm -f *."$file_extension"
     echo "Файлы с расширением .$file_extension удалены из $source_directory."
 else
