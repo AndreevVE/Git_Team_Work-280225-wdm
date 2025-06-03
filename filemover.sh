@@ -27,5 +27,24 @@ echo "Будут копироваться файлы с расширением: 
 
 # Копирование файлов с указанным расширением в целевую директорию
 
-# Архивация исходных файлов.
+# Архивация исходных файлов
+read -p "Введите путь к исходной директории: " source_directory
+read -p "Введите путь к целевой директории: " target_directory
+read -p "Введите расширение файлов для архивации (без точки, например txt): " file_extension
+
+# === Создание имени архива ===
+current_date=$(date +%F)
+archive_name="old_files_${current_date}.tar"
+# === Создание архзива ===
+tar -cf "$target_directory/$archive_name" *."$file_extension"
+
+if [ $? -eq 0 ]; then
+    echo "Архив $archive_name успешно создан в $target_directory."
+
+# ====== Удаление исзодных файлов ======
+    rm -f *."$file_extension"
+    echo "Файлы с расширением .$file_extension удалены из $source_directory."
+else
+    echo "Ошибка при создании архива."
+fi
 
