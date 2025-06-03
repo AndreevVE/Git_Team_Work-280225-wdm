@@ -12,7 +12,7 @@ emover.sh#!/bin/bash ^ls all ls -al# Запрос исходной и целев
 # Копирование файлов с указанным расширением в целевую директорию
 echo "Копирование и переименование файлов:"
 
-for file in "$source_directory"/* 
+for file in "$source_directory"/*."$file_extension" 
 do
   filename=$(basename "$file")
   name="${filename%.*}"
