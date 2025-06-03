@@ -23,9 +23,6 @@ read -p "Введите расширение файлов для архивац�
 # === Создание имени архива ===
 current_date=$(date +%F)
 archive_name="old_files_${current_date}.tar"
-
-cd "$source_directory" || { echo "Ошибка: не удалось перейти в $source_directory"; exit 1; }
-
 # === Создание архзива ===
 tar -cf "$target_directory/$archive_name" *."$file_extension"
 
