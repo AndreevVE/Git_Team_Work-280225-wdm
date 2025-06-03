@@ -1,10 +1,11 @@
 #!/bin/bash
-
-if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
-
+if git status > /dev/null 2>&1; then
+  echo "Это git-репозиторий"
+else
+  echo "Не git-репозиторий"
+fi
   git add -A
 
- 
   if git commit -m "Автоматический коммит $(date +'%Y-%m-%d %H:%M:%S')" > /dev/null 2>&1; then
     echo " Изменения успешно зафиксированы."
   else
