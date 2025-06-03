@@ -8,19 +8,16 @@
 
 # Проверка существования исходной директории и целевой директории
 
-source_directory=dir
-target_directory=dir1
+if [ ! -d "$source_directory" ];
+  then
+    echo "is no directory"
+    exit 1
+fi
 
-             if [ ! -d "$source_directory" ];
-                         then
-                           echo "is no directory"
-                       exit 1
-                        fi
-               if [ ! -d "$target_directory" ];
-                     then
-
-                   mkdir -p "$target_directory"
-               fi
+if [ ! -d "$target_directory" ];
+  then
+    mkdir -p "$target_directory"
+fi
                    
                
                       
