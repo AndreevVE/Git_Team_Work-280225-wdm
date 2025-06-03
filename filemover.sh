@@ -11,11 +11,8 @@
 
 # Проверка, есть ли файлы с указанным расширением в исходной директории
 #!/bin/bash
-SOURCE_DIR='source_directory'
-EXTENSION='file_extension'
-
 found=0
-for file in "$SOURCE_DIR"/*."$EXTENTION"; do
+for file in "$source_directory"/*."$file_extension"; do
    if [ -e "$file"]; then
      found=1
      break
@@ -23,11 +20,11 @@ for file in "$SOURCE_DIR"/*."$EXTENTION"; do
 done
 
    if [ "$found" -eq 0 ]; then
-  echo "There are no files with this extention: .$EXTENTION"
+  echo "There are no files with this extention: .$file_extension"
   exit 1
 
    else 
-  echo "Files with .$EXTENTION were found"
+  echo "Files with .$file_extension were found"
 
    fi  
 
